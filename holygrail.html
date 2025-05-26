@@ -4,16 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holy Grail</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js" integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var color = randomColor();
+        let myIds = ['red', 'blue', 'green', 'yellow', 'pink'];
+
+        function getFirstColor() {
+            myIds.forEach((id) => document.getElementById(id).style.background = randomColor());
+        }
+
+        function changeColor(id, shade) {
+            document.getElementById(id).style.background = randomColor({luminosity: 'bright', hue: shade});
+        }
+    </script>
     <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('font/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        main {
+            font-family: 'Roboto';
+            font-weight: 900;
+            font-size: 24px;
+            -webkit-text-stroke: 1px darkred;
+            color: white;
+            max-width: 1140px;
+            height: calc(100dvh - 260px);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 0 30px 0;
+            overflow-y: scroll;
+        }
+
+        .quadrat {
+            cursor: pointer;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header {
+            border-bottom: 1px solid black;
+            height: 100px;
+            width: 100%;
+        }
+
+        footer {
+            border-top: 1px solid black;
+            height: 80px;
+            width: 100%;
+        }
 
     </style>
 </head>
-<body>
+<body onload="getFirstColor()">
     <header></header>
     <main>
-        <div class="quadrat" id="red"></div>
-        <div class="quadrat" id="blue"></div>
-        <div class="quadrat" id="green"></div>
+        <div class="quadrat" id="red" onclick="changeColor('red', 'red')">
+            Click me!
+        </div>
+        <div class="quadrat" id="blue" onclick="changeColor('blue', 'blue')">
+            Click me!
+        </div>
+        <div class="quadrat" id="green" onclick="changeColor('green', 'green')">
+            Click me!
+        </div>
+        <div class="quadrat" id="yellow" onclick="changeColor('yellow', 'yellow')">
+            Click me!
+        </div>
+        <div class="quadrat" id="pink" onclick="changeColor('pink', 'pink')">
+            Click me!
+        </div>
     </main>
     <footer></footer>
 </body>
