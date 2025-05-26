@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal sections</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'DM Sans';
+        src: url('font/DM_Sans/DMSans-VariableFont_opsz,wght.ttf');
+    }
+
+    * {
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: 'DM Sans';
+        }
+
+        header {
+            height: 100px;
+            background-color: #e1b382;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 10px 0 #c89666;
+            z-index: 2;
+        }
+
+        footer {
+            height: 80px;
+            background-color: #e1b382;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 -8px 10px 0 #c89666;
+        }
+
+        .inside {
+            width: 100%;
+            max-width: 1440px;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            padding: 30px 16px;
+            >span {
+                align-self: flex-end;
+                margin-left: auto;
+                font-size: 24px;
+            }
+        }
+
+        main {
+            min-height: calc(100dvh - 180px);
+        }
+
+        section {
+            min-height: calc(100dvh - 180px);
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .first_fox {
+            background-image: url('img/fox3.jpg');
+        }
+
+        .second_fox {
+            background-image: url('img/fox2.jpg');
+        }
+
+        .third_fox {
+            background-image: url('img/fox1.jpg');
+        }
+</style>
+<body>
+    <header>
+        <div class="inside">
+            <span>My foxy collection</span>
+        </div>
+    </header>
+    <main>
+        <section class="first_fox"></section>
+        <section class="second_fox"></section>
+        <section class="third_fox"></section>
+    </main>
+    
+    <footer>
+        <div class="inside">
+            <span>Best wishes ❤️</span>
+        </div>
+    </footer>
+</body>
+</html>
