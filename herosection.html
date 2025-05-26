@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Section</title>
+    <style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('font/Roboto/Roboto-VariableFont_wdth,wght.ttf');
+        }
+
+        html, body {
+            font-family: 'Roboto';
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            position: relative;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: red;
+        }
+
+        section {
+            width: 100%;
+            padding: 30px 0 30px 0;
+            font-size: 32px;
+            display: flex;
+            justify-content: center;
+            background-size: cover;
+        }
+
+        .atf {
+            background-color: black;
+            padding: 0;
+        }
+
+        .atf img {
+            width: 100%;
+            max-width: 1440px;
+        }
+
+        .opening {max-width: 1440px;}
+
+        .opening table {
+            font-size: 32px;
+            width: 40%
+        }
+
+        .opening table td:nth-child(2) {
+            text-align: center;
+            }
+
+        .location {
+            max-width: 1440px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .titel {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .food_menu {
+            max-width: 1440px;
+        }
+
+        footer {
+            height: 10dvh;
+            background-color: goldenrod;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer div {
+            width: 100%;
+            max-width: 1440px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20%;
+        }
+
+        @media(max-width: 930px) {
+            section {font-size: 18px;}
+            .opening table {font-size: 18px;}
+        }
+
+        @media (max-width: 830px) {
+            .titel {display: flex; flex-direction: column;}
+             section {font-size: 16px;}
+            .opening table {font-size: 16px;}
+        }
+
+        @media (max-width: 745px) {
+            .location { flex-direction: column;}
+            .titel {flex-direction: row; padding-bottom: 30px; font-weight:600;}
+            iframe {width: 100%;}
+        }
+
+        @media (max-width: 490px) {
+            table {width: auto; text-wrap: nowrap;}
+        }
+
+    </style>
+</head>
+<body>
+    <section class="atf">
+        <img src="img/sushi.jpg" alt="sushi rolls">
+    </section>
+    <section class="opening">
+        <table>
+            <tr>
+                <td>Montag</td>
+                <td>Ruhetag</td>
+            </tr>
+            <tr>
+                <td>Dienstag</td>
+                <td>11:00 - 20:00</td>
+            </tr>
+            <tr>
+                <td>Mittwoch</td>
+                <td>11:00 - 20:00</td>
+            </tr>
+            <tr>
+                <td>Donnerstag</td>
+                <td>11:00 - 20:00</td>
+            </tr>
+            <tr>
+                <td>Freitag</td>
+                <td>11:00 - 20:00</td>
+            </tr>
+            <tr>
+                <td>Samstag</td>
+                <td>11:00 - 22:00</td>
+            </tr>
+            <tr>
+                <td>Sonntag</td>
+                <td>11:00 - 22:00</td>
+            </tr>
+        </table>
+    </section>
+    <section class="location">
+        <div class="titel">
+            <span>So kommst du&nbsp;</span>
+            <span>zu uns!</span>
+        </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5248.258320175686!2d10.721118276629545!3d48.87481427133446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479f2a85e87495b5%3A0xa82e00e9563d66f6!2sMarktpl.%2012%2C%2086650%20Wemding!5e0!3m2!1sde!2sde!4v1748249725273!5m2!1sde!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="food_menu">
+        <span><a href="downloads/food_menu.jpg" target="_blank" download="my_menu">Hier</a> kannst du unsere Karte downloaden!</span>
+    </section>
+    <footer>
+        <div>©</div>
+    </footer>
+</body>
+</html>
