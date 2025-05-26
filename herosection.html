@@ -31,7 +31,7 @@
 
         section {
             width: 100%;
-            padding: 30px 0 30px 0;
+            padding: 0 0 30px 0;
             font-size: 32px;
             display: flex;
             justify-content: center;
@@ -48,7 +48,10 @@
             max-width: 1440px;
         }
 
-        .opening {max-width: 1440px;}
+        .opening {
+            padding-top: 30px;
+            max-width: 1440px;
+        }
 
         .opening table {
             font-size: 32px;
@@ -112,6 +115,11 @@
 
         @media (max-width: 490px) {
             table {width: auto; text-wrap: nowrap;}
+        }
+
+        @media (min-height: 2082px) {
+            body {min-height: 100dvh;}
+            footer {margin-top: auto;}
         }
 
     </style>
