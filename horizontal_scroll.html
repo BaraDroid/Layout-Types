@@ -22,6 +22,11 @@
             padding: 0;
             scroll-behavior: smooth;
             font-family: 'DM Sans';
+            height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            /* dokud tady nebylo flex, tak to scrollovalo jen "venku", ne mezi header und footer */
+            
         }
 
         header {
@@ -32,6 +37,10 @@
             align-items: center;
             box-shadow: 0 8px 10px 0 #c89666;
             z-index: 2;
+            position: sticky;
+            top: 0;
+            right: 0;
+            left: 0;
         }
 
         footer {
@@ -41,6 +50,10 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 -8px 10px 0 #c89666;
+            position: sticky;
+            bottom: 0;
+            right: 0;
+            left: 0;
         }
 
         .inside {
@@ -58,14 +71,23 @@
         }
 
         main {
-            min-height: calc(100dvh - 180px);
+            background-color: #12343b;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scrollbar-width: none; 
+            scroll-snap-type: x mandatory;
         }
 
         section {
-            min-height: calc(100dvh - 180px);
-            width: 100%;
+            flex-shrink: 0;
+            width: 100dvw;
+            background-size: contain;
+            background-size: max(1440px);
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: center center;
+            scroll-snap-align: start;
+            height: calc(100dvh - 180px);
         }
 
         .first_fox {
@@ -80,13 +102,13 @@
             background-image: url('img/fox1.jpg');
         }
 </style>
-<body>
+<body onload="checkScrollSection()">
     <header>
         <div class="inside">
-            <span>My foxy collection</span>
+            <span>Horizontal scroll</span>
         </div>
     </header>
-    <main>
+    <main id="scrollHorizontal">
         <section class="first_fox"></section>
         <section class="second_fox"></section>
         <section class="third_fox"></section>
@@ -94,8 +116,25 @@
     
     <footer>
         <div class="inside">
-            <span>Best wishes ❤️</span>
+            <span>Barbora</span>
         </div>
     </footer>
+    <script>
+    const scrollSection = document.getElementById('scrollHorizontal');
+
+        function checkScrollSection() {
+            if(scrollSection) {
+                scrollSection.addEventListener('wheel', moveLeft);
+            }
+        }
+
+    function moveLeft(event) {
+        console.log("they see me scrolling, they hating");
+        event.preventDefault();
+        scrollSection.scrollLeft += event.deltaY * 15;
+        console.log("Current scrollLeft:", scrollSection.scrollLeft, "DeltaY:", event.deltaY);
+     }
+
+</script>
 </body>
 </html>
