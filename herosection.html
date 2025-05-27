@@ -101,6 +101,52 @@
             padding-right: 20%;
         }
 
+        /* .arrow_box {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(-90deg);
+            right: 17%;
+            bottom: 20%;
+        }
+
+        .arrow {
+            width: 60px;
+            height: 60px;
+            border-top: 12px solid white;
+            border-left: 12px solid white;
+            transform: rotate(-45deg);
+            animation: arrow-load 2s infinite;
+        }
+
+        .arrow:nth-child(1) {
+            left: 125px;
+            animation-delay: 0.4s;
+        }
+
+         .arrow:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+         .arrow:nth-child(3) {
+            right: 125px;
+        }
+
+        @keyframes arrow-load {
+            0% {
+                opacity: 0;
+                transform: rotate(-45deg) translate(60px, 60px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(-45deg) translate(-60px, -60px);
+            }
+        } */
+
         @media(max-width: 930px) {
             section {font-size: 18px;}
             .opening table {font-size: 18px;}
@@ -132,6 +178,11 @@
 <body>
     <section class="atf">
         <img src="img/sushi.jpg" alt="sushi rolls">
+        <div class="arrow_box">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
     </section>
     <section class="opening">
         <table>
